@@ -17,14 +17,17 @@ if ( ! defined ( 'WPINC' ) )
 	die;
 }
 
-
 /**
  * TODO:  Change PluginName into your real plugin name ....
  * The code that runs during plugin activation.
- * This action is documented in includes/class-activator.php
+ * This action is documented in hooks/class-activator.php
  */
 register_activation_hook ( __FILE__ , function ()
 {
+	if ( ! current_user_can ( 'activate_plugins' ) )
+	{
+		return;
+	}
 
 	require_once plugin_dir_path ( __FILE__ ) . 'hooks/class-activator.php';
 	PluginName_Plugin_Activator::activate ();
@@ -34,16 +37,19 @@ register_activation_hook ( __FILE__ , function ()
 /**
  * TODO:  Change PluginName into your real plugin name ....
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-deactivator.php
+ * This action is documented in hooks/class-deactivator.php
  */
 register_deactivation_hook ( __FILE__ , function ()
 {
+	if ( ! current_user_can ( 'activate_plugins' ) )
+	{
+		return;
+	}
 
 	require_once plugin_dir_path ( __FILE__ ) . 'hooks/class-deactivator.php';
 	PluginName_Plugin_Deactivator::deactivate ();
 
 } );
-
 
 /**
  * TODO:  Change PluginName into your real plugin name ....
