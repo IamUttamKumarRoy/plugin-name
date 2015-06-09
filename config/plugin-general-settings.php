@@ -18,6 +18,11 @@ $settings[ 'plugin_name' ] = 'plugin-name';
  */
 $settings[ 'plugin_version' ] = '1.0.0';
 
+/**
+ * Set templates that you want to load them from plugin to Pages..
+ */
+$settings[ 'templates' ] = array ();
+
 
 // for fancy reason we will access array settings as objects ...
 return (object) $settings;
