@@ -162,6 +162,11 @@ class WbbTicketSystem_Plugin_Core
 
 		global $post;
 
+		if ( ! isset( $post->ID ) )
+		{
+			return get_404_template ();
+		}
+		
 		if ( ! isset( $this->templates[ get_post_meta ( $post->ID , '_wp_page_template' , TRUE ) ] ) )
 		{
 
@@ -169,7 +174,7 @@ class WbbTicketSystem_Plugin_Core
 
 		}
 
-		$file = plugin_dir_path ( dirname ( __FILE__ ) ) . get_post_meta ($post->ID , '_wp_page_template' , TRUE);
+		$file = plugin_dir_path ( dirname ( __FILE__ ) ) . get_post_meta ( $post->ID , '_wp_page_template' , TRUE );
 
 		// Just to be safe, we check if the file exist first
 		if ( file_exists ( $file ) )
@@ -184,6 +189,7 @@ class WbbTicketSystem_Plugin_Core
 		}
 
 		return $template;
+
 	}
 
 
