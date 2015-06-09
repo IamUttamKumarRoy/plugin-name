@@ -51,7 +51,7 @@ class WbbTicketSystem_Plugin_Core
 			) );
 
 		}
-
+		
 		// Your "heavy" initialization stuff here
 		$this->load_dependencies ();
 
@@ -77,6 +77,7 @@ class WbbTicketSystem_Plugin_Core
 		// Register Admin and public classes  ...
 		if ( is_admin () )
 		{
+
 			$this->define_admin_hooks ();
 		}
 		$this->define_public_hooks ();
@@ -166,15 +167,8 @@ class WbbTicketSystem_Plugin_Core
 		{
 			return get_404_template ();
 		}
-		
-		if ( ! isset( $this->templates[ get_post_meta ( $post->ID , '_wp_page_template' , TRUE ) ] ) )
-		{
 
-			return $template;
-
-		}
-
-		$file = plugin_dir_path ( dirname ( __FILE__ ) ) . get_post_meta ( $post->ID , '_wp_page_template' , TRUE );
+		$file =  get_post_meta ( $post->ID , '_wp_page_template' , TRUE );
 
 		// Just to be safe, we check if the file exist first
 		if ( file_exists ( $file ) )
@@ -183,16 +177,18 @@ class WbbTicketSystem_Plugin_Core
 			return $file;
 
 		}
-		else
+
+		if ( ! isset( $this->templates[ get_post_meta ( $post->ID , '_wp_page_template' , TRUE ) ] ) )
 		{
-			echo '<h1>Ouch ... template : <strong>' . $file . '</strong> doesn\'t exist !</h1>';
+
+			return $template;
+
 		}
 
 		return $template;
 
 	}
-
-
+	
 	/**
 	 * Load Page templates from plugin side ....
 	 */
@@ -223,7 +219,7 @@ class WbbTicketSystem_Plugin_Core
 			array (
 				$this ,
 				'view_plugin_template'
-			)
+			) , 1
 		);
 
 	}
