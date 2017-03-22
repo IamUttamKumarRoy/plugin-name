@@ -21,16 +21,16 @@ class PluginName_Public
 	{
 
 		// Add Public scripts ...
-		add_action (
-			'wp_enqueue_scripts' , function ()
-		{
-			// Styles ...
-			wp_enqueue_style ( "plugin-public" , plugin_dir_url ( __FILE__ ) . 'assets/css/plugin-public.css' , array () , '1.0.0' , 'all' );
+		/*		add_action (
+					'wp_enqueue_scripts' , function ()
+				{
+					// Styles ...
+					wp_enqueue_style ( "plugin-public" , plugin_dir_url ( __FILE__ ) . 'assets/css/plugin-public.css' , array () , '1.0.0' , 'all' );
 
-			// Scripts ..
-			wp_enqueue_script ( "plugin-public-js" , plugin_dir_url ( __FILE__ ) . 'assets/js/plugin-public.js' , array ( 'jquery' ) , '1.0.0' , FALSE );
-		}
-		);
+					// Scripts ..
+					wp_enqueue_script ( "plugin-public-js" , plugin_dir_url ( __FILE__ ) . 'assets/js/plugin-public.js' , array ( 'jquery' ) , '1.0.0' , FALSE );
+				}
+				);*/
 
 	}
 
