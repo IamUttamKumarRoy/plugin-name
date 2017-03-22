@@ -1,4 +1,4 @@
-# simple-wordpress-plugin-framework
+# Wordpress Starter Plugin
 Simple Wordpress Plugin Framework
 
 #Contents
