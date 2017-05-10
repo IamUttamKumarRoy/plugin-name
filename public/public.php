@@ -14,24 +14,27 @@ if ( ! defined ( 'WPINC' ) )
  *              appropriate name.
  *
  **----------------------------------------------------------------------------**/
-class PluginName_Public
+if ( ! class_exists ( 'PluginName_Public' ) )
 {
-
-	public function __construct ()
+	class PluginName_Public
 	{
 
-		// Add Public scripts ...
-		/*		add_action (
-					'wp_enqueue_scripts' , function ()
-				{
-					// Styles ...
-					wp_enqueue_style ( "plugin-public" , plugin_dir_url ( __FILE__ ) . 'assets/css/plugin-public.css' , array () , '1.0.0' , 'all' );
+		public function __construct ()
+		{
 
-					// Scripts ..
-					wp_enqueue_script ( "plugin-public-js" , plugin_dir_url ( __FILE__ ) . 'assets/js/plugin-public.js' , array ( 'jquery' ) , '1.0.0' , FALSE );
-				}
-				);*/
+			// Add Public scripts ...
+			/*		add_action (
+						'wp_enqueue_scripts' , function ()
+					{
+						// Styles ...
+						wp_enqueue_style ( "plugin-public" , plugin_dir_url ( __FILE__ ) . 'assets/css/plugin-public.css' , array () , '1.0.0' , 'all' );
+
+						// Scripts ..
+						wp_enqueue_script ( "plugin-public-js" , plugin_dir_url ( __FILE__ ) . 'assets/js/plugin-public.js' , array ( 'jquery' ) , '1.0.0' , FALSE );
+					}
+					);*/
+
+		}
 
 	}
-
 }

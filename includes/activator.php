@@ -30,20 +30,21 @@ if ( ! defined ( 'WPINC' ) )
  * @DOCUMENTATION : https://codex.wordpress.org/Function_Reference/register_activation_hook
  */
 register_activation_hook (
-	$__ROOT_FILE__ , function ()
-{
-
-	// Check if user has right permissions.
-	// Function is located in functions.php
-	if ( check_permissions () )
+	$__ROOT_FILE__ ,
+	function ()
 	{
 
-	}
+		// Check if user has right permissions.
+		// Function is located in functions.php
+		if ( check_permissions () )
+		{
 
-	// ATTENTION: This is *only* done during plugin activation hook in this example!
-	// You should *NEVER EVER* do this on every page load!!
-	flush_rewrite_rules ();
-}
+		}
+
+		// ATTENTION: This is *only* done during plugin activation hook in this example!
+		// You should *NEVER EVER* do this on every page load!!
+		flush_rewrite_rules ();
+	}
 );
 
 /**
@@ -56,16 +57,17 @@ register_activation_hook (
  * @DOCUMENTATION   : https://codex.wordpress.org/Function_Reference/register_deactivation_hook
  */
 register_deactivation_hook (
-	$__ROOT_FILE__ , function ()
-{
-
-	// Check if user has right permissions.
-	// Function is located in functions.php
-	if ( check_permissions () )
+	$__ROOT_FILE__ ,
+	function ()
 	{
 
+		// Check if user has right permissions.
+		// Function is located in functions.php
+		if ( check_permissions () )
+		{
+
+		}
 	}
-}
 );
 
 

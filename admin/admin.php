@@ -14,26 +14,27 @@ if ( ! defined ( 'WPINC' ) )
  *              appropriate name.
  *
  **----------------------------------------------------------------------------**/
-class PluginName_Admin
+if ( ! class_exists ( 'PluginName_Admin' ) )
 {
-
-
-	public function __construct ()
+	class PluginName_Admin
 	{
 
-		// Add Admin scripts ...
-		/*		add_action (
-					'admin_enqueue_scripts' , function ()
-				{
-					// Styles ...
-					wp_enqueue_style ( "plugin-admin" , plugin_dir_url ( __FILE__ ) . 'assets/css/plugin-admin.css' , array () , '1.0.0' , 'all' );
 
-					// Scripts ..
-					wp_enqueue_script ( "plugin-admin-js" , plugin_dir_url ( __FILE__ ) . 'assets/js/plugin-admin.js' , array ( 'jquery' ) , '1.0.0' , FALSE );
-				}
-				);*/
+		public function __construct ()
+		{
 
+			// Add Admin scripts ...
+			/*		add_action (
+						'admin_enqueue_scripts' , function ()
+					{
+						// Styles ...
+						wp_enqueue_style ( "plugin-admin" , plugin_dir_url ( __FILE__ ) . 'assets/css/plugin-admin.css' , array () , '1.0.0' , 'all' );
+
+						// Scripts ..
+						wp_enqueue_script ( "plugin-admin-js" , plugin_dir_url ( __FILE__ ) . 'assets/js/plugin-admin.js' , array ( 'jquery' ) , '1.0.0' , FALSE );
+					}
+					);*/
+
+		}
 	}
-
-
 }

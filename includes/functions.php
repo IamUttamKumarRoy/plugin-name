@@ -18,6 +18,11 @@ if ( ! defined ( 'WPINC' ) )
 if ( ! function_exists ( 'check_permissions' ) )
 {
 
+	/**
+	 * Small check permissions function helper
+	 *
+	 * @return bool
+	 */
 	function check_permissions ()
 	{
 		return current_user_can ( 'activate_plugins' );
