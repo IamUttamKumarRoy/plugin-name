@@ -71,7 +71,11 @@ require_once plugin_dir_path ( $__ROOT_FILE__ ) . 'includes/activator.php';
  * your plugin logic code must be try to keep  them minimalistic ,clean and nice
  * commented.
  **----------------------------------------------------------------------------**/
-require_once plugin_dir_path ( $__ROOT_FILE__ ) . 'admin/admin.php';
+if ( is_admin() ) 
+{
+	require_once plugin_dir_path ( $__ROOT_FILE__ ) . 'admin/admin.php';
+}
+
 require_once plugin_dir_path ( $__ROOT_FILE__ ) . 'public/public.php';
 
 /**---------------------------------------------------------------------------------------------------------------------------------
